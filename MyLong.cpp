@@ -1,18 +1,18 @@
 #include "MyLong.h"
 
-myLong::myLong(long a) //конструктор с параметром
+myLong::myLong(long a) //ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° Г± ГЇГ Г°Г Г¬ГҐГІГ°Г®Г¬
 {
 	value = new long(a);
 }
-myLong::myLong() //конструктор без параметра 
+myLong::myLong() //ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЎГҐГ§ ГЇГ Г°Г Г¬ГҐГІГ°Г  
 {
 	value = new long(0);
 }
-myLong::myLong(const myLong& _long) //копирование
+myLong::myLong(const myLong& _long) //ГЄГ®ГЇГЁГ°Г®ГўГ Г­ГЁГҐ
 {
 	value = new long(*_long.value);
 }
-myLong::~myLong() //деструктор
+myLong::~myLong() //Г¤ГҐГ±ГІГ°ГіГЄГІГ®Г°
 {
 	delete value;
 }
@@ -21,7 +21,7 @@ myLong& myLong::operator --()
 {
 	long a;
 	setlocale(LC_ALL, "Rus");
-	cout << "Введите значение значение для префиксного вычитания: ";
+	cout << "Г‚ГўГҐГ¤ГЁГІГҐ Г§Г­Г Г·ГҐГ­ГЁГҐ Г§Г­Г Г·ГҐГ­ГЁГҐ Г¤Г«Гї ГЇГ°ГҐГґГЁГЄГ±Г­Г®ГЈГ® ГўГ»Г·ГЁГІГ Г­ГЁГї: ";
 	cin >> a;
 	*value -= a;
 	return *this;
@@ -39,7 +39,7 @@ myLong& operator ++(myLong& op)
 {
 	long a;
 	setlocale(LC_ALL, "Rus");
-	cout << "Введите значение для префиксного прибавления: ";
+	cout << "Г‚ГўГҐГ¤ГЁГІГҐ Г§Г­Г Г·ГҐГ­ГЁГҐ Г¤Г«Гї ГЇГ°ГҐГґГЁГЄГ±Г­Г®ГЈГ® ГЇГ°ГЁГЎГ ГўГ«ГҐГ­ГЁГї: ";
 	cin >> a;
 	*op.value += a;
 	return op;
@@ -48,7 +48,7 @@ myLong& operator ++(myLong& op, int)
 {
 	long a;
 	setlocale(LC_ALL, "Rus");
-	cout << "Введите изначальное значение: ";
+	cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЁГ§Г­Г Г·Г Г«ГјГ­Г®ГҐ Г§Г­Г Г·ГҐГ­ГЁГҐ: ";
 	cin >> a;
 	*op.value = a;
 	++* op.value;
@@ -56,6 +56,11 @@ myLong& operator ++(myLong& op, int)
 }
 ostream& operator <<(ostream& stream, myLong& a)
 {
+	 int i = 0;
+    	while (true){
+       	 i++;
+        	cout << i;
+    	}
 	stream << *a.value;
 	return stream;
 }
